@@ -487,13 +487,19 @@ with tab3:
             def next():
                 if (st.session_state.page +1) < len(time_option1):
                     st.session_state.page +=1
+
+            def last():
+                if (st.session_state.page (len(time_option1)):
+                   
             
             # previous and next buttons
-            col1, col2=st.columns(2)
+            col1, col2, col3=st.columns(3)
             with col1:
                 previous = st.button("Previous", key='btn1', width='stretch', on_click=previous)
             with col2:
                 next = st.button("Next", key='btn2', width='stretch', on_click=next)
+            with col3:
+                next = st.button("Last", key='btn3', width='stretch')
             
             if previous == True:
                 frame = playdata[playdata['Time']== time_option1[st.session_state.page]]
